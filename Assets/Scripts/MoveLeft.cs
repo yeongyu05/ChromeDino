@@ -11,6 +11,11 @@ public class MoveLeft : MonoBehaviour
 
     private float MoveSpeed;
 
+    void Start()
+    {
+        MoveSpeed = StartMoveSpeed;
+    }
+
     // Update is called once per frame
     void Update()
     {
