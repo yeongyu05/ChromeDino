@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,15 +15,7 @@ public class GameStateManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
 
         Time.timeScale = 0f;
         GameStartUI.SetActive(true);
@@ -55,7 +44,6 @@ public class GameStateManager : MonoBehaviour
     public void Restart()
     {
         startGame = false;
-        GameStartUI.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
